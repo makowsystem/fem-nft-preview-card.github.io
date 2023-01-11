@@ -35,8 +35,18 @@ body {
 }
 
 main {
-	max-width: 370px;
+	max-width: 388px;
 	margin: 0 auto;
+}
+
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  widows: 1px;
 }
 
 .nft {
