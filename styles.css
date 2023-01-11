@@ -1,201 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
 :root {
-  --clr-primay-soft-blue: hsl(215, 51%, 70%);
-  --clr-primay-cyan: hsl(178, 100%, 50%);
+	--clr-primary1: hsl(215, 51%, 70%);
+	--clr-primary2: hsl(178, 100%, 50%);
 
-  --clr-neutral-dark-blue-main: hsl(217, 54%, 11%);
-  --clr-neutral-dark-blue-card: hsl(216, 50%, 16%);
-  --clr-neutral-dark-blue-line: hsl(215, 32%, 27%);
-  --clr-neutral-white: hsl(0, 0%, 100%);
+	--clr-neutral1: hsl(217, 54%, 11%);
+	--clr-neutral2: hsl(216, 50%, 16%);
+	--clr-neutral3: hsl(215, 32%, 27%);
+	--clr-neutral4: hsl(0, 0%, 100%);
 
-  --ff-font: "Outfit", sans-serif;
+	--ff-outfit: 'Outfit', sans-serif;
 
-  --fw-light: 300;
-  --fw-regular: 400;
-  --fw-semi-bold: 600;
+	--fw-light: 300;
+	--fw-regular: 400;
+	--fw-semibold: 600;
 }
 
-/*
-  1. Use a more-intuitive box-sizing model.
-*/
-*, *::before, *::after {
-  box-sizing: border-box;
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
-/*
-  2. Remove default margin
-*/
-* {
-  margin: 0;
-}
-/*
-  3. Allow percentage-based heights in the application
-*/
-html, body {
-  height: 100%;
-}
-/*
-  Typographic tweaks!
-  4. Add accessible line-height
-  5. Improve text rendering
-*/
+
 body {
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-}
-/*
-  6. Improve media defaults
-*/
-img, picture, video, canvas, svg {
-  display: block;
-  max-width: 100%;
-}
-/*
-  7. Remove built-in form typography styles
-*/
-input, button, textarea, select {
-  font: inherit;
-}
-/*
-  8. Avoid text overflows
-*/
-p, h1, h2, h3, h4, h5, h6 {
-  overflow-wrap: break-word;
+	font-family: var(--ff-outfit);
+	background-color: var(--clr-neutral1);
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
 }
 
-/* general styling */
-body {
-  font-family: var(--ff-font);
-  display: grid;
-  place-content: center;
-  background-color: var(--clr-neutral-dark-blue-main);
-  color: var(--clr-neutral-white);
+main {
+	max-width: 370px;
+	margin: 0 auto;
 }
 
-.sr-only:not(:focus):not(:active) {
-  clip: rect(0, 0, 0, 0);
-  clip-path: inset(50%);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  widows: 1px;
+.nft {
+	margin: 2rem 1rem;
+	padding: 25px;
+	background-color: var(--clr-neutral2);
+	border-radius: 15px;
 }
 
-.card {
-  background-color: var(--clr-neutral-dark-blue-card);
-  border-radius: 1rem;
-  overflow: hidden;
-  width: 330px;
-  max-width: 375px;
-  margin: 0 auto;
-  padding: 1.5rem;
+.nft__image {
+	border-radius: 12px;
+	overflow: hidden;
+	position: relative;
 }
 
-.card__title {
-  font-size: 1.35rem;
-  margin: 1.3rem 0 .8rem 0;
+.nft__image img {
+	width: 100%;
+	display: block;
 }
 
-.card__title:is(:hover, :focus),
-span:is(:hover, :focus) {
-  color: var(--clr-primay-cyan);
+.nft__image-overlay {
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background-color: hsla(178, 100%, 50%, .5);
+	display: none;
 }
 
-.card__preview {
-  position: relative;
+.nft__image-overlay img {
+	position: absolute;
+	width: 50px;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
 }
 
-.card__quilibrium,
-.card__overlay {
-  border-radius: 1rem;
+.nft__image:hover .nft__image-overlay {
+	display: block;
 }
 
-.card__overlay {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  opacity: 0;
-  transition: .3s ease-in-out;
-  background-color: var(--clr-primay-cyan);
+.nft__text a {
+	color: var(--clr-neutral4);
+	text-decoration: none;
+	font-weight: var(--fw-semibold);
+	font-size: 22px;
+	padding: 22px 0 16px 0;
+	display: inline-block;
 }
 
-.card__preview:hover .card__overlay {
-  opacity: 0.5;
-  cursor: pointer;
+.nft__text a:hover {
+	color: var(--clr-primary2);
 }
 
-.card__preview:hover .card__overlay + .card__icon-preview {
-  display: block;
+.nft__text p {
+	color: var(--clr-primary1);
+	font-size: 18px;
+	font-weight: var(--fw-light);
+	line-height: 1.4;
 }
 
-.card__icon-preview {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: none;
+.nft__flex {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px 0;
 }
 
-.card__desc {
-  font-size: var(--fw-light);
-  color: var(--clr-primay-soft-blue);
-  margin: 0 0 .8rem 0;
+.nft__ethereum,
+.nft__days {
+	display: flex;
+	align-items: center;
 }
 
-.card__etherium {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid var(--clr-neutral-dark-blue-line);
-  padding: 0 0 .8rem 0;
+.nft__ethereum p {
+	font-weight: var(--fw-semibold);
+	color: var(--clr-primary2);
+	padding-left: 7px;
 }
 
-.card__eth,
-.card__eth-days {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.nft__days p {
+	font-weight: var(--fw-regular);
+	font-size: 16px;
+	padding-left: 7px;
 }
 
-.card__eth {
-  color: var(--clr-primay-cyan);
-  gap: .5rem;
+hr {
+	margin-top: 2px;
+	color: var(--clr-neutral3);
 }
 
-.card__eth img {
-  width: 11px;
-  height: 18px;
+.nft__author {
+	display: flex;
+	align-items: center;
+	padding: 16px 0 5.5px 0;
+	gap: 16px;
 }
 
-.card__eth-days {
-  font-size: 15px;
-  color: var(--clr-primay-soft-blue);
-  gap: .4rem;
+.nft__author img {
+	width: 33.5px;
+	border: 1px solid var(--clr-neutral4);
+	border-radius: 50%;
 }
 
-.card__eth-days img {
-  width: 17px;
-  height: 17px;
+.nft__author p {
+	font-weight: var(--fw-regular);
+	color: var(--clr-primary1);
 }
 
-.card__creator {
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  color: var(--clr-primay-soft-blue);
-  font-size: var(--fw-light);
-  padding: .9rem 0 0 0;
+.nft__author p > a {
+	text-decoration: none;
+	color: var(--clr-neutral4);
 }
 
-.card__creator img {
-  border: 1px solid var(--clr-neutral-white);
-  border-radius: 50%;
-  width: 33px;
-  height: 33px;
-  margin-right: 1rem;
-}
-
-span {
-  margin-left: 0.3rem;
-  color: var(--clr-neutral-white);
+.nft__author p > a:hover {
+	color: var(--clr-primary2);
 }
