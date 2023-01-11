@@ -9,52 +9,45 @@
   
   <title>Frontend Mentor | NFT preview card component</title>
 
-  <!-- Google fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
+
   <main>
-    <article class="card">
-      <h1 class="sr-only">NFT Preview Card</h1>
-      <div class="card__preview">
-        <img 
-          class="card__quilibrium"
-          src="images/image-equilibrium.jpg"
-          alt="Equilibrium"
-        >
-        <div class="card__overlay"></div>
-        <a href="#" class="card__icon-preview" title="view">
-          <img src="./images/icon-view.svg" alt="view-icon">
-        </a>
-      </div>
-      <div class="card__content">
-        <h1 class="card__title">Equilibrium #3429</h1>
-        <p class="card__desc">Our Equilibrium collection promotes balance and calm.</p>
-        <div class="card__etherium">
-          <h4 class="card__eth">
-            <img src="images/icon-ethereum.svg" alt="">
-            0.041 ETH
-          </h4>
-          <p class="card__eth-days">
-            <img src="images/icon-clock.svg" alt="">
-            3 days left
-          </p>
+
+    <div class="nft">
+
+      <div class="nft__image">
+        <img src="images/image-equilibrium.jpg" alt="">
+        <div class="nft__image-overlay">
+          <img src="images/icon-view.svg" alt="">
         </div>
-        <p class="card__creator">
-          <img src="images/image-avatar.png" alt="">
-          Creation of 
-          <span>Jules Wyvern</span>
-        </p>
       </div>
-    </article>
+
+      <div class="nft__text">
+        <a href="#">Equilibrium #3429</a>
+        <p>Our Equilibrium collection promotes balance and calm.</p>
+        <div class="nft__flex">
+          <div class="nft__ethereum">
+            <img src="images/icon-ethereum.svg" alt="">
+            <p>0.041 ETH</p>
+          </div>
+          <div class="nft__days">
+            <img src="images/icon-clock.svg" alt="">
+            <p>3 days left</p>
+          </div>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="nft__author">
+        <img src="images/image-avatar.png" alt="">
+        <p>Creation of <a href="#">Jules Wyvern</a></p>
+      </div>
+
+    </div>
+
   </main>
+
 </body>
 </html>
